@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "urlshort/urlshort.py",
+      "src": "urlshort/__init__.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "urlshort/urlshort.py"
+      "dest": "urlshort/__init__.py"
     }
   ]
 }
