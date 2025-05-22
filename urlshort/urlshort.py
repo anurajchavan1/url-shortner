@@ -3,6 +3,15 @@ import json
 import os.path
 from werkzeug.utils import secure_filename
 
+def create_app(test_config=None):
+    app = Flask(__name__)
+    app.secret_key = 'jhwevfbuyhevjwfbhhbc'
+
+    from . import urlshort
+    app.register_blueprint(urlshort.bp)
+
+    return app
+
 bp = Blueprint('urlshort',__name__)
 
 @bp.route('/')
